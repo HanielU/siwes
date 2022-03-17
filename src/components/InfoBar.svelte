@@ -25,13 +25,15 @@
 				</div>
 
 				{#each data as element}
-					<div class="details-row">
-						{#each Object.entries(element) as [title, val]}
-							<div class="column">
-								{val}
-							</div>
-						{/each}
-					</div>
+					{#if Object.entries(element)[0][1] !== ""}
+						<div class="details-row">
+							{#each Object.entries(element) as [title, val]}
+								<div class="column">
+									{val}
+								</div>
+							{/each}
+						</div>
+					{/if}
 				{/each}
 			</div>
 		</div>
@@ -56,7 +58,7 @@
 	}
 
 	.content-details {
-		padding: 0 5px;
+		padding: 5px 5px 0px;
 	}
 
 	.info {
@@ -67,6 +69,9 @@
 
 	.details-header {
 		display: flex;
+		border-bottom: 1px solid #949494;
+		padding-bottom: 5px;
+		margin-bottom: 5px;
 
 		.column {
 			width: calc(100% / 3);

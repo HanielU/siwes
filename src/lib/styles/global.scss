@@ -1,20 +1,20 @@
 @mixin flex($justify: center, $align: center) {
-	display: flex;
-	justify-content: $justify;
-	align-items: $align;
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
 }
 
 @mixin outline($hc: false, $color: black) {
-	outline: 1px solid $color;
+  outline: 1px solid $color;
 
-	// NOTE: hc(highlightChildren): boolean
-	@if $hc {
-		*:not(svg, svg > *) {
-			outline: 1px solid $color;
-		}
-	}
+  // NOTE: hc(highlightChildren): boolean
+  @if $hc {
+    *:not(svg, svg > *) {
+      outline: 1px solid $color;
+    }
+  }
 }
 
 %no-highlight {
-	-webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
 }
